@@ -229,25 +229,25 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="nav-item active"><a href="#"><i class="feather icon-home"></i><span
+                <li class="nav-item active mb-2 mt-2"><a href="#"><i class="feather icon-home"></i><span
                             class="menu-title">Dashboard</a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-mail"></i><span class="menu-title"
+                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-user"></i><span class="menu-title"
                             data-i18n="Email">Manage Users</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-message-square"></i><span
+                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-user-plus"></i><span
                             class="menu-title" data-i18n="Chat">Manage Subscriptions</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-message-square"></i><span
+                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-music"></i><span
                             class="menu-title" data-i18n="Chat">Manage Songs</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-message-square"></i><span
+                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-credit-card"></i><span
                             class="menu-title" data-i18n="Chat">Manage Payments</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-message-square"></i><span
+                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-bar-chart-2"></i><span
                             class="menu-title" data-i18n="Chat">Analytics</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-message-square"></i><span
+                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-file-text"></i><span
                             class="menu-title" data-i18n="Chat">Reports / Notification</span></a>
                 </li>
 
