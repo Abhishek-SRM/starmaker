@@ -55,18 +55,9 @@
     }
 
     .main-menu.menu-light .navigation>li.active>a {
-        background: linear-gradient(118deg, #EC2F4B, #009FFF);
+        background: linear-gradient(118deg,#009FFF, #EC2F4B );
     }
-
-    .nav.nav-tabs .nav-item .nav-link.active {
-        background: linear-gradient(270deg, #EC2F4B -9.87%, #009FFF 113.73%);
-        box-shadow: 0px 1px 8px rgba(212, 133, 133, 0.13) !important;
-        border-radius: 8px !important;
-        color:white;
-        border:none !important;
-    }
-    .nav.nav-tabs .nav-item .nav-link.active:after{
-        content: none;  }
+   
 
 </style>
 <!-- END: Head-->
@@ -229,25 +220,25 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="nav-item active mb-2 mt-2"><a href="#"><i class="feather icon-home"></i><span
+                <li class="nav-item mb-2 mt-2 {{ (request()->is('dashboard')) ? 'active' : '' }}"><a href="{{url('dashboard/')}}"><i class="feather icon-home"></i><span
                             class="menu-title">Dashboard</a>
                 </li>
-                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-user"></i><span class="menu-title"
+                <li class=" nav-item mb-2 {{ (request()->is('manageuser')) ? 'active' : '' }}"><a href="{{url('manageuser/')}}"><i class="feather icon-user"></i><span class="menu-title"
                             data-i18n="Email">Manage Users</span></a>
                 </li>
-                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-user-plus"></i><span
+                <li class=" nav-item mb-2 {{ (request()->is('subscription')) ? 'active' : '' }}"><a href="{{url('subscription/')}}"><i class="feather icon-user-plus"></i><span
                             class="menu-title" data-i18n="Chat">Manage Subscriptions</span></a>
                 </li>
-                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-music"></i><span
+                <li class=" nav-item mb-2"><a href="{{url('updateemp/')}}"><i class="feather icon-music"></i><span
                             class="menu-title" data-i18n="Chat">Manage Songs</span></a>
                 </li>
-                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-credit-card"></i><span
+                <li class=" nav-item mb-2"><a href="{{url('updateemp/')}}"><i class="feather icon-credit-card"></i><span
                             class="menu-title" data-i18n="Chat">Manage Payments</span></a>
                 </li>
-                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-bar-chart-2"></i><span
+                <li class=" nav-item mb-2"><a href="{{url('updateemp/')}}"><i class="feather icon-bar-chart-2"></i><span
                             class="menu-title" data-i18n="Chat">Analytics</span></a>
                 </li>
-                <li class=" nav-item mb-2"><a href="#"><i class="feather icon-file-text"></i><span
+                <li class=" nav-item mb-2"><a href="{{url('updateemp/')}}"><i class="feather icon-file-text"></i><span
                             class="menu-title" data-i18n="Chat">Reports / Notification</span></a>
                 </li>
 
@@ -284,6 +275,7 @@
     <script src="{{ asset('app-assets/vendors/js/extensions/dropzone.min.js')}}"></script>
     <script src="{{ asset('app-assets/js/scripts/extensions/dropzone.js')}}"></script>
     <!-- END: Page JS-->
+    <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
 
 </body>
 <!-- END: Body-->

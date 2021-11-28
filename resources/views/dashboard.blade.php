@@ -2,6 +2,15 @@
 @section('title','Homepage')
 
 @section('content')
+<style>
+   .card{
+        box-shadow: none;
+    }
+    .nav.nav-tabs .nav-item .nav-link
+    {
+        font-size: 0.79rem !important;
+    }
+    </style>
       <!-- BEGIN: Content-->
       <div class="app-content content">
         <div class="content-overlay"></div>
@@ -94,35 +103,39 @@
                                                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" aria-controls="profile" role="tab" aria-selected="false">Banned Users</a>
                                                                 </li>
                                                             </ul>
+                                                            <hr>
                                                             <div class="tab-content">
                                                                 <div class="tab-pane active" id="home" aria-labelledby="home-tab" role="tabpanel">
-                                                                   @for ($i = 0; $i < 4; $i++)
+                                                                    
+                                                                   @foreach ($users as $user)
+                                                            
                                                                    <div class="d-flex justify-content-start align-items-center mb-1">
                                                                     <div class="avatar mr-2">
-                                                                        <img src="{{asset('app-assets/images/profile/pages/page-09.jpg')}}" alt="avtar img holder" height="35" width="35">
+                                                                        <img src="{{asset('app-assets/images/avatar/avatar.svg')}}" alt="avtar img holder" height="35" width="35">
                                                                     </div>
                                                                     <div class="user-page-info">
-                                                                        <p class="mb-0 font-weight-bold">Rockose</p>
-                                                                        <span class="font-small-2">Cake sesame snaps cupcake </span>
+                                                                        <p class="mb-0 font-weight-bold">{{$user->first_name}}</p>
+                                                                        <span class="font-small-2">{{$user->bio}} </span>
                                                                     </div>
                                                     
                                                                 </div>
-                                                                   @endfor
+                                                                   @endforeach
                                                                 </div>
                                                                 <div class="tab-pane" id="profile" aria-labelledby="profile-tab" role="tabpanel">
                                                                     <div class="table-responsive">
-                                                                        @for ($i = 0; $i < 4; $i++)
+                                                                        @foreach ($bannedusers as $banned_user)
+                                                            
                                                                         <div class="d-flex justify-content-start align-items-center mb-1">
                                                                          <div class="avatar mr-2">
-                                                                             <img src="{{asset('app-assets/images/profile/pages/page-09.jpg')}}" alt="avtar img holder" height="35" width="35">
+                                                                             <img src="{{asset('app-assets/images/avatar/avatar.svg')}}" alt="avtar img holder" height="35" width="35">
                                                                          </div>
                                                                          <div class="user-page-info">
-                                                                             <p class="mb-0 font-weight-bold">Rockose</p>
-                                                                             <span class="font-small-2">Cake sesame snaps cupcake </span>
+                                                                             <p class="mb-0 font-weight-bold">{{$banned_user->first_name}}</p>
+                                                                             <span class="font-small-2">{{$banned_user->bio}} </span>
                                                                          </div>
                                                          
                                                                      </div>
-                                                                        @endfor
+                                                                        @endforeach
                                                                     </div>
                                                                 </div>
                                                          
@@ -201,7 +214,7 @@
                                                             @for ($i = 0; $i < 4; $i++)
                                                             <div class="d-flex justify-content-start align-items-center mb-1">
                                                              <div class="avatar mr-2">
-                                                                 <img src="{{asset('app-assets/images/profile/pages/page-09.jpg')}}" alt="avtar img holder" height="35" width="35">
+                                                                 <img src="{{asset('app-assets/images/avatar/avatar.svg')}}" alt="avtar img holder" height="35" width="35">
                                                              </div>
                                                              <div class="user-page-info">
                                                                  <p class="mb-0 font-weight-bold">Rockose</p>

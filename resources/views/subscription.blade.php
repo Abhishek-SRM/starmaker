@@ -1,40 +1,74 @@
 @extends('layout.master')
-@section('title', 'Manage Users')
+@section('title', 'Subscription')
 
 @section('content')
     <!-- BEGIN: Content-->
     <style>
-        .card{
+        .card {
             box-shadow: 0px 4px 25px 0px rgb(0 0 0 / 10%) !important;
         }
-     .card .btn{
-         font-size: 12px;
-     }
-     .gradient-light-primary{
-        background: linear-gradient(118deg, #EC2F4B, #009FFF);
-     }
-     .dropzone {
-         min-height: 265px;
-     }
-     .dropzone .dz-message{
-         top:30%;
-     }
-     .dropzone .dz-message:before{
-         top: 100px;
-         content: "\e872";
-         font-size: 50px;
-     }
-     .bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-down, .bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-up
-     {
-         border-radius: 50% !important;
-         min-width: 30px;
-         min-height: 30px;
-     }
-     .btn-lg, .btn-group-lg > .btn
-     {
-         padding: 1rem 5.5rem;
+
+        .card .btn {
+            font-size: 12px;
+        }
+
+        .gradient-light-primary {
+            background: linear-gradient(118deg, #EC2F4B, #009FFF);
+        }
+
+        .dropzone {
+            min-height: 265px;
+        }
+
+        .dropzone .dz-message {
+            top: 30%;
+        }
+
+        .dropzone .dz-message:before {
+            top: 100px;
+            content: "\e872";
+            font-size: 50px;
+        }
+        .nav.nav-tabs .nav-item .nav-link.active{
+        overflow: hidden;
+        border-radius: 4px;
+        color:white !important;
+        background: linear-gradient(118deg,#009FFF, #EC2F4B );
      }
      
+
+        .bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-down,
+        .bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-up {
+            border-radius: 50% !important;
+            min-width: 30px;
+            min-height: 30px;
+        }
+
+        .btn-lg,
+        .btn-group-lg>.btn {
+            padding: 1rem 5.5rem;
+        }
+
+        .btn-grad {background-image: linear-gradient(to right, #DC2424 0%, #4A569D  51%, #DC2424  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
     </style>
     <div class="app-content content">
         <div class="content-overlay"></div>
@@ -66,8 +100,8 @@
                                                         aria-selected="true">Add Subscription</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" id="profile-tab-fill" data-toggle="tab"
-                                                        href="#profile-fill" role="tab" aria-controls="profile-fill"
+                                                    <a class="nav-link" id="subs-user-fill" data-toggle="tab"
+                                                        href="#subs-user-fill" role="tab" aria-controls="user-fill"
                                                         aria-selected="false">Subscribed Users</a>
                                                 </li>
 
@@ -76,49 +110,89 @@
                                             <!-- Tab panes -->
                                             <div class="tab-content pt-1">
                                                 <div class="tab-pane active" id="sub-fill" role="tabpanel"
-                                                aria-labelledby="sub-tab-fill"> 
-                                                <hr>
-                                                <div class="d-flex justify-content-start align-items-center mb-1">
-                                                    <div class="avatar mr-50">
-                                                        <img src="{{asset('app-assets/images/subs.png')}}" alt="avtar img holder" height="125" width="125">
-                                                    </div>
-                                                    <div class="user-page-info">
-                                                        <h4>Subscriptions Pack Name</h4>
-                                                        <div><span>Pack Info : Lorem Ipsum is simply dummy text of the printing and typesetting</span></div>
-                                                        <span class="font-small-2 text-danger font-weight-bold">Rewards</span><br>
-                                                        <div class="todo-item-action d-flex">
-                                                            <a class="todo-item-info success"><i class="feather icon-info"></i></a>
-                                                            <a class="todo-item-favorite warning"><i class="feather icon-star"></i></a>
-                                                            <a class="todo-item-delete"><i class="feather icon-trash"></i></a>
+                                                    aria-labelledby="sub-tab-fill">
+                                                     @for ($i = 0; $i < 5; $i++)
+                                                     <div class="subcription">
+                                                    <hr>
+                                                    <span class="badge badge-pill badge-success badge-sm">1</span>
+                                                    <div class="d-flex justify-content-start align-items-center mb-1">
+
+                                                        <div class="avatar mr-3">
+                                                            <img src="{{ asset('app-assets/images/subs.png') }}"
+                                                                alt="avtar img holder" height="125" width="125">
                                                         </div>
-                                                        
+                                                        <div class="user-page-info">
+                                                            <h4>Subscriptions Pack Name</h4>
+                                                            <div class="mb-2"><span>Pack Info : Lorem Ipsum is
+                                                                    simply dummy text of the printing and
+                                                                    typesetting</span></div>
+                                                            <span
+                                                                class="font-small-2 text-danger font-weight-bold ">Rewards</span><br>
+                                                            <div class="card-body p-0">
+                                                                <div class="avatar bg-warning mr-1">
+                                                                    <div class="avatar-content">
+                                                                        <i class="avatar-icon feather icon-award"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="avatar bg-warning mr-1">
+                                                                    <div class="avatar-content">
+                                                                        <i class="avatar-icon feather icon-award"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="avatar bg-warning mr-1">
+                                                                    <div class="avatar-content">
+                                                                        <i class="avatar-icon feather icon-award"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="avatar bg-warning mr-1">
+                                                                    <div class="avatar-content">
+                                                                        <i class="avatar-icon feather icon-award"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="ml-auto mr-3">
+                                                            
+                                                            <a href=# ><i class="feather icon-edit text-success mr-1"></i></a>
+                                                            <a href=#><i class="feather icon-trash text-danger"></i></a>
+
+                                                        </div>
                                                     </div>
-                                                    <div class="ml-auto"><i class="feather icon-star"></i></div>
-                                                </div>
-                                                <hr>
+                                                    <hr>
+                                                   </div>
+                                                  @endfor
                                                 </div>
 
                                                 <div class="tab-pane" id="home-fill" role="tabpanel"
                                                     aria-labelledby="home-tab-fill">
                                                     <div class="form-group">
-                                                        <button type="button" class="btn mb-1 btn-primary btn-lg btn-block waves-effect waves-light">Add New Subscription Pack</button>
+                                                        <button type="button"
+                                                            class="btn mb-3 btn-grad btn-lg btn-block waves-effect waves-light">Add
+                                                            New Subscription Pack
+                                                            <lord-icon
+                                                            src="https://cdn.lordicon.com/mecwbjnp.json"
+                                                            trigger="hover"
+                                                            colors="primary:#ffffff,secondary:#08a88a"
+                                                            style="width:20px;height:20px; margin-left: 20px">
+                                                        </lord-icon></button>
                                                         <div class="row">
                                                             <div class="col-4">
                                                                 <div class="card">
                                                                     <div class="card-content">
                                                                         <div class="card-body">
-                                                                            <form action="#" class="dropzone dropzone-area dz-clickable" id="dpz-single-file">
-                                                                                <div class="dz-message">Drop Image Here To Upload</div>
+                                                                            <form action="#"
+                                                                                class=" dropzone dropzone-area dz-clickable"
+                                                                                id="dpz-single-file">
+                                                                                <div class="dz-message">Drop Image Here
+                                                                                    To Upload</div>
                                                                             </form>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-12">
-                                                                <div class="card" style="height: 32.062px;">
-                                                                    <div class="card-header">
-                                                                        <h4 class="card-title">Create Subscription Pack</h4>
-                                                                    </div>
+                                                            <h4 class="card-title">Create Subscription Pack</h4>                                                                   
                                                                     <div class="card-content">
                                                                         <div class="card-body">
                                                                             <form class="form form-vertical">
@@ -126,34 +200,61 @@
                                                                                     <div class="row">
                                                                                         <div class="col-12">
                                                                                             <div class="form-group">
-                                                                                                <label for="first-name-icon">Pack Name</label>
-                                                                                                <div class="position-relative has-icon-left">
-                                                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Pack Name">
-                                                                                                    <div class="form-control-position">
-                                                                                                        <i class="feather icon-package"></i>
+                                                                                                <label
+                                                                                                    for="first-name-icon">Pack
+                                                                                                    Name</label>
+                                                                                                <div
+                                                                                                    class="position-relative has-icon-left">
+                                                                                                    <input type="text"
+                                                                                                        id="first-name-icon"
+                                                                                                        class="form-control"
+                                                                                                        name="fname-icon"
+                                                                                                        placeholder="Pack Name">
+                                                                                                    <div
+                                                                                                        class="form-control-position">
+                                                                                                        <i
+                                                                                                            class="feather icon-package"></i>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div class="form-group">
-                                                                                                <label for="first-name-icon">Pack description</label>
-                                                                                                <div class="position-relative has-icon-left">
-                                                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Description">
-                                                                                                    <div class="form-control-position">
-                                                                                                        <i class="feather icon-alert-circle"></i>
+                                                                                                <label
+                                                                                                    for="first-name-icon">Pack
+                                                                                                    description</label>
+                                                                                                <div
+                                                                                                    class="position-relative has-icon-left">
+                                                                                                    <input type="text"
+                                                                                                        id="first-name-icon"
+                                                                                                        class="form-control"
+                                                                                                        name="fname-icon"
+                                                                                                        placeholder="Description">
+                                                                                                    <div
+                                                                                                        class="form-control-position">
+                                                                                                        <i
+                                                                                                            class="feather icon-alert-circle"></i>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div class="form-group">
-                                                                                                <label for="first-name-icon">Pack Value</label>
-                                                                                                <div class="position-relative has-icon-left">
-                                                                                                    <input type="text" id="first-name-icon" class="form-control" name="fname-icon" placeholder="Pack Value">
-                                                                                                    <div class="form-control-position">
-                                                                                                        <i class="feather icon-dollar-sign"></i>
+                                                                                                <label
+                                                                                                    for="first-name-icon">Pack
+                                                                                                    Value</label>
+                                                                                                <div
+                                                                                                    class="position-relative has-icon-left">
+                                                                                                    <input type="text"
+                                                                                                        id="first-name-icon"
+                                                                                                        class="form-control"
+                                                                                                        name="fname-icon"
+                                                                                                        placeholder="Pack Value">
+                                                                                                    <div
+                                                                                                        class="form-control-position">
+                                                                                                        <i
+                                                                                                            class="feather icon-dollar-sign"></i>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                        
+
                                                                                     </div>
                                                                                 </div>
                                                                             </form>
@@ -168,59 +269,113 @@
                                                                     </div>
                                                                     <div class="card-content">
                                                                         <div class="card-body">
-                                                                           <form class="needs-validation" novalidate="">
+                                                                            <form class="needs-validation" novalidate="">
                                                                                 <div class="form-row">
                                                                                     <div class="col-md-6 col-12 mb-3">
-                                                                                        <div class="btn-group dropdown ml-5 mb-1">
-                                                                                            <button type="button" class="btn btn-primary btn-lg btn-block waves-effect waves-light">Add gift</button>
-                                                                                            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                                                        <div
+                                                                                            class="btn-group dropdown ml-5 mb-1">
+                                                                                            <button type="button"
+                                                                                                class="btn btn-primary btn-lg btn-block waves-effect waves-light">Add
+                                                                                                gift</button>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-primary dropdown-toggle dropdown-toggle-split waves-effect waves-light"
+                                                                                                data-toggle="dropdown"
+                                                                                                aria-haspopup="true"
+                                                                                                aria-expanded="false">
+                                                                                                <span
+                                                                                                    class="sr-only">Toggle
+                                                                                                    Dropdown</span>
                                                                                             </button>
-                                                                                            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(98px, 38px, 0px);">
-                                                                                                <a class="dropdown-item" href="#">Gift(Rose/Boat)</a>
-                                                                                                <a class="dropdown-item" href="#">Gift(Rose/Boat)</a>
-                                                                                                <a class="dropdown-item" href="#">Gift(Rose/Boat)</a>
-                                                                                                <a class="dropdown-item" href="#">Gift(Rose/Boat)</a>
+                                                                                            <div class="dropdown-menu"
+                                                                                                x-placement="bottom-start"
+                                                                                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(98px, 38px, 0px);">
+                                                                                                <a class="dropdown-item"
+                                                                                                    href="#">Gift(Rose/Boat)</a>
+                                                                                                <a class="dropdown-item"
+                                                                                                    href="#">Gift(Rose/Boat)</a>
+                                                                                                <a class="dropdown-item"
+                                                                                                    href="#">Gift(Rose/Boat)</a>
+                                                                                                <a class="dropdown-item"
+                                                                                                    href="#">Gift(Rose/Boat)</a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-12 mb-3">
-                                                                                        <div class="d-flex align-items-center mb-1">
-                                                                                            <div class="input-group input-group-lg bootstrap-touchspin">
-                                                                                                <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected"><button class="btn btn-primary bootstrap-touchspin-down" type="button">-</button></span><input type="number" class="touchspin form-control" value="3"><span class="input-group-btn input-group-append bootstrap-touchspin-injected"><button class="btn btn-primary bootstrap-touchspin-up" type="button">+</button></span>
+                                                                                        <div
+                                                                                            class="d-flex align-items-center mb-1">
+                                                                                            <div
+                                                                                                class="input-group input-group-lg bootstrap-touchspin">
+                                                                                                <span
+                                                                                                    class="input-group-btn input-group-prepend bootstrap-touchspin-injected"><button
+                                                                                                        class="btn btn-primary bootstrap-touchspin-down"
+                                                                                                        type="button">-</button></span><input
+                                                                                                    type="number"
+                                                                                                    class="touchspin form-control"
+                                                                                                    value="3"><span
+                                                                                                    class="input-group-btn input-group-append bootstrap-touchspin-injected"><button
+                                                                                                        class="btn btn-primary bootstrap-touchspin-up"
+                                                                                                        type="button">+</button></span>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="form-row">
                                                                                     <div class="col-md-6 col-12 mb-3">
-                                                                                        <div class="btn-group dropdown ml-5 mb-1">
-                                                                                            <button type="button" class="btn btn-primary btn-lg btn-block waves-effect waves-light">Add gift</button>
-                                                                                            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                                                        <div
+                                                                                            class="btn-group dropdown ml-5 mb-1">
+                                                                                            <button type="button"
+                                                                                                class="btn btn-primary btn-lg btn-block waves-effect waves-light">Add
+                                                                                                gift</button>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-primary dropdown-toggle dropdown-toggle-split waves-effect waves-light"
+                                                                                                data-toggle="dropdown"
+                                                                                                aria-haspopup="true"
+                                                                                                aria-expanded="false">
+                                                                                                <span
+                                                                                                    class="sr-only">Toggle
+                                                                                                    Dropdown</span>
                                                                                             </button>
-                                                                                            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(98px, 38px, 0px);">
-                                                                                                <a class="dropdown-item" href="#">Gift(Rose/Boat)</a>
-                                                                                                <a class="dropdown-item" href="#">Gift(Rose/Boat)</a>
-                                                                                                <a class="dropdown-item" href="#">Gift(Rose/Boat)</a>
-                                                                                                <a class="dropdown-item" href="#">Gift(Rose/Boat)</a>
+                                                                                            <div class="dropdown-menu"
+                                                                                                x-placement="bottom-start"
+                                                                                                style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(98px, 38px, 0px);">
+                                                                                                <a class="dropdown-item"
+                                                                                                    href="#">Gift(Rose/Boat)</a>
+                                                                                                <a class="dropdown-item"
+                                                                                                    href="#">Gift(Rose/Boat)</a>
+                                                                                                <a class="dropdown-item"
+                                                                                                    href="#">Gift(Rose/Boat)</a>
+                                                                                                <a class="dropdown-item"
+                                                                                                    href="#">Gift(Rose/Boat)</a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="col-md-6 col-12 mb-3">
-                                                                                        <div class="d-flex align-items-center mb-1">
-                                                                                            <div class="input-group input-group-lg bootstrap-touchspin">
-                                                                                                <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected"><button class="btn btn-primary bootstrap-touchspin-down" type="button">-</button></span><input type="number" class="touchspin form-control" value="3"><span class="input-group-btn input-group-append bootstrap-touchspin-injected"><button class="btn btn-primary bootstrap-touchspin-up" type="button">+</button></span>
+                                                                                        <div
+                                                                                            class="d-flex align-items-center mb-1">
+                                                                                            <div
+                                                                                                class="input-group input-group-lg bootstrap-touchspin">
+                                                                                                <span
+                                                                                                    class="input-group-btn input-group-prepend bootstrap-touchspin-injected"><button
+                                                                                                        class="btn btn-primary bootstrap-touchspin-down"
+                                                                                                        type="button">-</button></span><input
+                                                                                                    type="number"
+                                                                                                    class="touchspin form-control"
+                                                                                                    value="3"><span
+                                                                                                    class="input-group-btn input-group-append bootstrap-touchspin-injected"><button
+                                                                                                        class="btn btn-primary bootstrap-touchspin-up"
+                                                                                                        type="button">+</button></span>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-12">
-                                                                                    <button type="submit" class="btn gradient-light-primary mr-1 mb-1 waves-effect waves-light">Submit</button>
-                                                                                    <button type="reset" class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Reset</button>
+                                                                                    <button type="submit"
+                                                                                        class="btn gradient-light-primary mr-1 mb-1 waves-effect waves-light">Submit</button>
+                                                                                    <button type="reset"
+                                                                                        class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Reset</button>
                                                                                 </div>
                                                                             </form>
-                                    
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -228,46 +383,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="tab-pane" id="profile-fill" role="tabpanel"
-                                                    aria-labelledby="profile-tab-fill">
-                                                    <div class="row">
-                                                        @for ($i = 0; $i < 6; $i++)
-                                                        <div class="col-xl-4 col-md-6 col-sm-12 profile-card-1">
-                                                            <div class="card" style="height: 299.663px;  box-shadow: 0px 4px 25px 0px rgb(0 0 0 / 10%) !important;">
-                                                                <div class="card-header mx-auto">
-                                                                    <div class="avatar avatar-xl">
-                                                                        <img class="img-fluid"
-                                                                            src="{{ asset('app-assets/images/portrait/small/avatar-s-11.jpg') }}">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card-content">
-                                                                    <div class="card-body text-center">
-                                                                        <h4>Zoila Legore</h4>
-                                                                        <p class="">GOLD PACK</p>
-                                                                        <div
-                                                                            class="card-btns d-flex justify-content-between">
-                                                                            <button
-                                                                                class="btn gradient-light-primary waves-effect waves-light">Edit
-                                                                                Details</button>
-                                                                            <button
-                                                                                class="btn  btn-outline-primary waves-effect waves-light">Ban
-                                                                                User</button>
-                                                                        </div>
-                                                                        <hr class="my-2">
-                                                                        <div class="d-flex justify-content-between">
-                                                                            <div class="float-left">
-                                                                                <i
-                                                                                    class="feather icon-clock text-warning mr-50"></i>
-                                                                                    10/05/2021
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        @endfor   
-                                                    </div>
+
+                                                <div class="tab-pane" id="subs-user-fill" role="tabpanel"
+                                                    aria-labelledby="user-fill">
+                                                      
                                                 </div>
                                             </div>
                                         </div>

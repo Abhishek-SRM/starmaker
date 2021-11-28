@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('subscription');
-});
+Route::get('/dashboard',[DashboardController::class,'dashboard']);
+
+Route::get('/manageuser',[DashboardController::class,'manageuser']);
+
+Route::get('/subscription',[DashboardController::class,'subscription']);
+
