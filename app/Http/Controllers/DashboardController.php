@@ -20,9 +20,7 @@ class DashboardController extends Controller
       }
 
     public function manageuser(Request $request){
-        $users=User::where('profiles_status','0')->get(['first_name','bio']);// for filtering data
-        dd('$users');
-        $bannedusers=User::where('profiles_status','1')->get(['first_name','bio']);
+        
       return view('manageuser');
     }
 

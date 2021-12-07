@@ -77,7 +77,9 @@
                                                 <div class="tab-pane active" id="home-fill" role="tabpanel"
                                                     aria-labelledby="home-tab-fill">
                                                     <div class="row">
-                                                        @foreach ($users as $user)
+                                                        @for ($i = 3; $i<4; $i++)
+                                                            
+                                                        
                                                         <div class="col-xl-3 col-md-6 col-sm-12 profile-card-1">
                                                             <div class="card" style="height: 299.663px;  box-shadow: 0px 4px 25px 0px rgb(0 0 0 / 10%) !important;">
                                                                 <div class="card-header mx-auto">
@@ -88,8 +90,8 @@
                                                                 </div>
                                                                 <div class="card-content">
                                                                     <div class="card-body text-center">
-                                                                        <h4>{{$user->first_name}}</h4>
-                                                                        <p>{{$user->bio}}</p>
+                                                                        <h4>Test</h4>
+                                                                        <p>para</p>
                                                                         <div
                                                                             class="card-btns d-flex justify-content-between">
                                                                             <button
@@ -111,7 +113,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        @endforeach   
+                                                        @endfor 
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane" id="profile-fill" role="tabpanel"
