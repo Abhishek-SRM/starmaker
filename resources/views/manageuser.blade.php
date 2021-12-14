@@ -77,9 +77,7 @@
                                                 <div class="tab-pane active" id="home-fill" role="tabpanel"
                                                     aria-labelledby="home-tab-fill">
                                                     <div class="row">
-                                                        @for ($i = 3; $i<4; $i++)
-                                                            
-                                                        
+                                                        @foreach ($users as $user)
                                                         <div class="col-xl-3 col-md-6 col-sm-12 profile-card-1">
                                                             <div class="card" style="height: 299.663px;  box-shadow: 0px 4px 25px 0px rgb(0 0 0 / 10%) !important;">
                                                                 <div class="card-header mx-auto">
@@ -90,7 +88,7 @@
                                                                 </div>
                                                                 <div class="card-content">
                                                                     <div class="card-body text-center">
-                                                                        <h4>Test</h4>
+                                                                        <h4>{{$user->first_name}}</h4>
                                                                         <p>para</p>
                                                                         <div
                                                                             class="card-btns d-flex justify-content-between">
@@ -105,21 +103,21 @@
                                                                         <div class="d-flex justify-content-between">
                                                                             <div class="float-left">
                                                                                 <i
-                                                                                    class="feather icon-clock text-warning mr-50"></i>
-                                                                                    10/05/2021
+                                                                                    class="feather icon-calendar text-warning mr-50"></i>
+                                                                                    {{$user->dob}}
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        @endfor 
+                                                        @endforeach 
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane" id="profile-fill" role="tabpanel"
                                                     aria-labelledby="profile-tab-fill">
                                                     <div class="row">
-                                                        @for ($i = 0; $i < 6; $i++)
+                                                        @foreach($bannedusers as $banneduser)
                                                         <div class="col-xl-3 col-md-6 col-sm-12 profile-card-1">
                                                             <div class="card" style="height: 299.663px;  box-shadow: 0px 4px 25px 0px rgb(0 0 0 / 10%) !important;">
                                                                 <div class="card-header mx-auto">
@@ -130,28 +128,28 @@
                                                                 </div>
                                                                 <div class="card-content">
                                                                     <div class="card-body text-center">
-                                                                        <h4>Zoila Legore</h4>
-                                                                        <p class="">Backend Dev</p>
+                                                                        <h4>{{$user->first_name}}</h4>
+                                                                        <p class="">{{$user->bio}}</p>
                                                                         <div
                                                                             class="card-btns d-flex justify-content-between">
                                                                             <button
                                                                                 class="btn btn-sm p-1 gradient-light-primary waves-effect waves-light">Unban User</button>
                                                                             <button
-                                                                                class="btn btn-sm p-1  btn-outline-primary waves-effect waves-light">Extend Ban</button>
+                                                                                class="btn btn-sm p-1 btn-outline-primary waves-effect waves-light">Extend Ban</button>
                                                                         </div>
                                                                         <hr class="my-2">
                                                                         <div class="d-flex justify-content-between">
                                                                             <div class="float-left">
                                                                                 <i
-                                                                                    class="feather icon-clock text-warning mr-50"></i>
-                                                                                    10/05/2021
+                                                                                    class="feather icon-calendar text-warning mr-50"></i>
+                                                                                    {{$user->dob}}
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        @endfor   
+                                                        @endforeach   
                                                     </div>
                                                 </div>
                                             </div>

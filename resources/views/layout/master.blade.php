@@ -101,105 +101,7 @@
             </div>
         </div>
     </nav>
-    <ul class="main-search-list-defaultlist d-none">
-        <li class="d-flex align-items-center"><a class="pb-25" href="#">
-                <h6 class="text-primary mb-0">Files</h6>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a
-                class="d-flex align-items-center justify-content-between w-100" href="#">
-                <div class="d-flex">
-                    <div class="mr-50"><img src="app-assets/images/icons/xls.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Two new item submitted</p><small
-                            class="text-muted">Marketing Manager</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;17kb</small>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a
-                class="d-flex align-items-center justify-content-between w-100" href="#">
-                <div class="d-flex">
-                    <div class="mr-50"><img src="app-assets/images/icons/jpg.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd
-                            Developer</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;11kb</small>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a
-                class="d-flex align-items-center justify-content-between w-100" href="#">
-                <div class="d-flex">
-                    <div class="mr-50"><img src="app-assets/images/icons/pdf.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital
-                            Marketing Manager</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;150kb</small>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a
-                class="d-flex align-items-center justify-content-between w-100" href="#">
-                <div class="d-flex">
-                    <div class="mr-50"><img src="app-assets/images/icons/doc.png" alt="png" height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web
-                            Designer</small>
-                    </div>
-                </div><small class="search-data-size mr-50 text-muted">&apos;256kb</small>
-            </a></li>
-        <li class="d-flex align-items-center"><a class="pb-25" href="#">
-                <h6 class="text-primary mb-0">Members</h6>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a
-                class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-50"><img src="app-assets/images/portrait/small/avatar-s-8.jpg" alt="png"
-                            height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a
-                class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-50"><img src="app-assets/images/portrait/small/avatar-s-1.jpg" alt="png"
-                            height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd
-                            Developer</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a
-                class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-50"><img src="app-assets/images/portrait/small/avatar-s-14.jpg" alt="png"
-                            height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital
-                            Marketing Manager</small>
-                    </div>
-                </div>
-            </a></li>
-        <li class="auto-suggestion d-flex align-items-center cursor-pointer"><a
-                class="d-flex align-items-center justify-content-between py-50 w-100" href="#">
-                <div class="d-flex align-items-center">
-                    <div class="avatar mr-50"><img src="app-assets/images/portrait/small/avatar-s-6.jpg" alt="png"
-                            height="32"></div>
-                    <div class="search-data">
-                        <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web
-                            Designer</small>
-                    </div>
-                </div>
-            </a></li>
-    </ul>
-    <ul class="main-search-list-defaultlist-other-list d-none">
-        <li class="auto-suggestion d-flex align-items-center justify-content-between cursor-pointer"><a
-                class="d-flex align-items-center justify-content-between w-100 py-50">
-                <div class="d-flex justify-content-start"><span
-                        class="mr-75 feather icon-alert-circle"></span><span>No results found.</span></div>
-            </a></li>
-    </ul>
-    <!-- END: Header-->
+
 
 
     <!-- BEGIN: Main Menu-->
@@ -229,6 +131,14 @@
                 <li class=" nav-item mb-2 {{ (request()->is('subscription')) ? 'active' : '' }}"><a href="{{url('subscription/')}}"><i class="feather icon-user-plus"></i><span
                             class="menu-title" data-i18n="Chat">Manage Subscriptions</span></a>
                 </li>
+                <li class="nav-item has-sub mb-2"><a href="#"><i class="feather icon-check-circle"></i><span class="menu-title" data-i18n="Menu Levels">Coin Pack</span></a>
+                    <ul class="menu-content" style="">
+                        <li class="is-shown open {{ (request()->is('viewtopup')) ? 'active' : '' }}"><a href="{{url('/viewtopup')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Second Level">View Coin Pack</span></a>
+                        </li>
+                        <li class="{{ (request()->is('addtopup')) ? 'active' : '' }}"><a href="{{url('/addtopup')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Second Level">Add Coin Pack</span></a>                           
+                        </li>
+                    </ul>
+                </li>
                 <li class=" nav-item mb-2"><a href="{{url('updateemp/')}}"><i class="feather icon-music"></i><span
                             class="menu-title" data-i18n="Chat">Manage Songs</span></a>
                 </li>
@@ -241,6 +151,7 @@
                 <li class=" nav-item mb-2"><a href="{{url('updateemp/')}}"><i class="feather icon-file-text"></i><span
                             class="menu-title" data-i18n="Chat">Reports / Notification</span></a>
                 </li>
+               
 
             </ul>
         </div>

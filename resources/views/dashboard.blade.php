@@ -106,9 +106,7 @@
                                                             <hr>
                                                             <div class="tab-content">
                                                                 <div class="tab-pane active" id="home" aria-labelledby="home-tab" role="tabpanel">
-                                                                    
-                                                                   @foreach ($users as $user)
-                                                            
+                                                                   @foreach ($users as $user)                                          
                                                                    <div class="d-flex justify-content-start align-items-center mb-1">
                                                                     <div class="avatar mr-2">
                                                                         <img src="{{asset('app-assets/images/avatar/avatar.svg')}}" alt="avtar img holder" height="35" width="35">

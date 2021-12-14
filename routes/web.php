@@ -25,3 +25,9 @@ Route::get('/manageuser',[DashboardController::class,'manageuser']);
 
 Route::get('/subscription',[DashboardController::class,'subscription']);
 
+Route::get('/viewtopup',[DashboardController::class,'viewtopup']);
+
+Route::get('/addtopup', [DashboardController::class,'addtopup']);
+
+Route::post('/addpack', [DashboardController::class,'addpack']);
+

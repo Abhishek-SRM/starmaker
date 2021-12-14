@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DashboardModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -20,11 +21,33 @@ class DashboardController extends Controller
       }
 
     public function manageuser(Request $request){
-        
-      return view('manageuser');
+      $users=User::where('profiles_status','0')->get(['first_name','bio','dob']);// for filtering data
+      $bannedusers=User::where('profiles_status','1')->get(['first_name','bio','dob']);
+      return view('manageuser',compact(['users','bannedusers']));
     }
 
      public function subscription(){
         return view('subscription');
+      }
+      public function viewtopup(){
+        $packs=DashboardModel::all();
+        return view('viewtopup',compact(['packs']));
+      }
+
+      public function addtopup(Request $request)
+      {
+        
+        return view('addtopup');
+      }
+      public function addpack(Request $request)
+      {
+        $pack = new DashboardModel();
+        $pack->packname = $request->packname;
+        $pack->packprice = $request->packprice;
+        $pack->packbonus = $request->packbonus;
+        $pack->packcoins = $request->packcoins;
+        $pack->save();
+        $pack = DashboardModel::all();
+        return view('addtopup', compact('pack'));
       }
 }

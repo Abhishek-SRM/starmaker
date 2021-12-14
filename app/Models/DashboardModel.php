@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class DashboardModel extends Model
 {
     use HasFactory;
+
+    protected $table='coinpack_topup';  
 }
